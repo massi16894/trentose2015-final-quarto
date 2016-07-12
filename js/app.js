@@ -67,6 +67,7 @@ $(document).ready(function(){
         if(att){
             $("img").remove();
             count++;
+            
             alert("Catched!!");
             if(count == MonsterModel.collection.length){
             alert("NO MORE MONSTERS!!!!!");
@@ -78,6 +79,14 @@ $(document).ready(function(){
         else
         {
             alert("Sorry, master");
+            $("img").remove();
+            count++;
+            if(count == MonsterModel.collection.length){
+            alert("NO MORE MONSTERS!!!!!");
+            }
+            
+            $("h2").append(tmpl.replace("IMG",MonsterModel.collection[count].name));
+            
         }
     
     });
