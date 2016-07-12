@@ -3,6 +3,7 @@
  * over a collection of "monsters"  
  */
 var count = 0;
+var y = 0;
 var MonsterModel = {
   
    /* Collection of available monsters */
@@ -67,12 +68,13 @@ $(document).ready(function(){
         if(att){
             $("img").remove();
             count++;
-            
+            y++;
             alert("Catched!!");
             if(count == MonsterModel.collection.length){
             alert("NO MORE MONSTERS!!!!!");
         }
             $("h2").append(tmpl.replace("IMG",MonsterModel.collection[count].name));
+            $("#monsterCatched").text("CATCHED NUM: "+y);
 
             
         }
